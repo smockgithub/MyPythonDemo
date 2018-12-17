@@ -1,0 +1,43 @@
+<html>
+    <script>
+        var a=100;
+        console.log(a);
+
+        //把方法装到数组对象里
+        var a1 = []
+        a1["b1"]=function(){console.log("33");}
+        a1["b2"]=function(){console.log("66");}
+        a1["b1"].call();//run
+
+        var abc = function(){}
+        abc["a1"]=100;
+        abc["fun_a2"]=function(){
+            console.log("abc.a2");
+            }
+        abc["fun_a3"]=function(){console.log("abc.a3");}
+        abc["fun_a4"]=function(){console.log("abc.a4");}
+        abc["dispose"]=function(){
+                for(var i in abc){
+                    if(i.indexOf("fun_")==0){//取fun_开头的对象
+                        console.log("该方法将被注销："+i);
+                    }
+                }
+                console.log("dispose all");
+            }
+
+        //abc["dispose"].call();
+        abc.dispose();
+
+        this.a="aa";
+        this.b="bb";
+        function hanshudiaoyong(a,b){
+            this.a1=a;
+            this.a2=b;
+            console.log(this.a1);
+        }
+
+        hanshudiaoyong("a11","b11");
+        console.log(this.a);
+        
+    </script>
+</html>
