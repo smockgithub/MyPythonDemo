@@ -63,7 +63,8 @@ print(a)
 
 # 类型字段名可以用于存取实际的 age 列
 dt = np.dtype([('age',np.int8)]) 
-a = np.array([(10.1,),(20.2,),(30.3,)], dtype = dt) 
+a = np.array([(20.1,),(21.2,),(31.3,)], dtype = dt) 
+print(a)
 print(a['age'])
 
 # 下面的示例定义一个结构化数据类型 student，包含字符串字段 name，整数字段 age，及浮点字段 marks，并将这个 dtype 应用到 adarray 对象
