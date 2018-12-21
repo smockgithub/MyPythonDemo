@@ -58,15 +58,18 @@ print(a)
 # 以下实例设置间距。
 
 a =np.linspace(1,10,10,retstep= True)
- 
 print(a)
-# 拓展例子
+
+# 拓展例子,一维数组翻转
 b =np.linspace(1,10,10).reshape([10,1])
 print(b)
 
 
 # numpy.logspace
-# numpy.logspace 函数用于创建一个于等比数列。格式如下：
+# numpy.logspace 次方，函数用于创建一个于等比数列。格式如下：
+
+# Log2 10	 ＝ 3.321928    2的3.321928次方=10 本函数不是作为这个使用
+# 而是base的start-stop次方等数列
 
 # np.logspace(start, stop, num=50, endpoint=True, base=10.0, dtype=None)
 # base 参数意思是取对数的时候 log 的下标。
@@ -84,5 +87,9 @@ a = np.logspace(1.0,  2.0, num =  10)
 print (a)
 
 # 将对数的底数设置为 2 :
-a = a = np.logspace(0,9,10,base=2)
+a = np.logspace(0,9,10,base=2)
 print (a)
+
+
+
+
