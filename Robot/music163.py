@@ -16,14 +16,19 @@
 
 from selenium import webdriver
 import time
+import os
 
 url='https://music.163.com/#/discover/playlist/'
 
 # 创建一个浏览器
 browser = webdriver.Chrome()
 
-while url != 'javacript:void(0)':
+path = os.environ['USERPROFILE']+"\\Documents\\python\\"
+if os.path.exists(path) == False :
+    os.makedirs(path)
 
+while url != 'javascript:void(0)':
+    # print("url=",url)
     browser.get(url)
 
     # time.sleep(1)
@@ -43,10 +48,11 @@ while url != 'javacript:void(0)':
             # print(msk)
             print(' '.join([msk.get_attribute('title'), num, msk.get_attribute("href")]) + '\n' + '=' * 50 + '\n')
 
-            with open("F:\\Users\\smock\\Documents\\python\\163playlist.txt", 'a', encoding='utf-8') as f:
+            with open(path+"163playlist.txt", 'a', encoding='utf-8') as f:
                 f.write(' '.join([msk.get_attribute('title'), num, msk.get_attribute("href")]) + '\n')
                 
     url = browser.find_element_by_css_selector("a.zbtn.znxt").get_attribute("href")
 
+print("文件已保存到",path+"163playlist.txt")
 # 结束调用
 browser.close()
