@@ -30,7 +30,7 @@ if os.path.exists(path) == False :
     os.makedirs(path)
 
 while url != 'javascript:void(0)':
-    # print("url=",url)
+    print("url=",url)
     browser.get(url)
 
     # time.sleep(1)
