@@ -3,6 +3,8 @@
 
 # 我们这次的目标是爬取热门歌单(https://music.163.com/#/discover/playlist/)，比如网易云音乐中播放量大于 1000万 的歌单信息（歌单名称、链接）。
 
+# Selenium with Python中文翻译文档 https://selenium-python-zh.readthedocs.io/en/latest/index.html
+
 # how to use
 # 1. pip install selenium
 # 2. 安装ChromeDriver，https://sites.google.com/a/chromium.org/chromedriver/downloads
