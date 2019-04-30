@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>123</title>
+</head>
+<script>
+    //跨域请求实例
+    function CORSRequest(method, url, opation, callback) {
+        var xhr = new XMLHttpRequest();
+        if ("withCredentials" in xhr) {
+            // 此时即支持CORS的情况
+            // 检查XMLHttpRequest对象是否有“withCredentials”属性
+            // “withCredentials”仅存在于XMLHTTPRequest level 2对象里
+        } else {
+            // 否则检查是否支持XDomainRequest
+            // XDomainRequest仅存在于IE中，是IE用于支持CORS请求的方式
+            xhr = new XDomainRequest();
+        }
+        xhr.open(method, url, true);
+        if (method == "POST") {
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.send(opation);
+        } else {
+            xhr.send();
+        }
+
+        xhr.onload = function () {
+            callback(xhr.responseText);
+
+        }
+    }
+</script>
+<bod>
+    <input type="button" value="abc"
+        onclick="CORSRequest('GET','http://192.168.2.61:8081/person','',function(str){console.log(str);})">
+</bod>
+
+</html>
