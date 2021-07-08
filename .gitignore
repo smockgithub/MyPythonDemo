@@ -1,4 +1,5 @@
 HelloWord/config.ini
+filename.joblib
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
